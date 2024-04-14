@@ -12,6 +12,7 @@ export default function AppContextProvider({ children }) {
     const [page, setPage] = useState(1);
     const [posts, setPosts] = useState([]);
     const [totalPages, setTotalPages] = useState(null);
+    const [isDarkMode, setDarkMode] = useState(false);
 
 
     async function fetchingPageData(page = 1){
@@ -37,6 +38,13 @@ export default function AppContextProvider({ children }) {
         fetchingPageData(page);
     }
 
+    const toggleDarkMode = () => {
+      setDarkMode((prev) => !prev);
+      if(isDarkMode){
+        
+      }
+    };
+
     const value = {
         loading,
         setLoading,
@@ -47,8 +55,12 @@ export default function AppContextProvider({ children }) {
         totalPages,
         setTotalPages,
         handlePageChange,
-        fetchingPageData
+        fetchingPageData,
+        isDarkMode,
+        setDarkMode,
+        toggleDarkMode
     }
+
 
     // step:3 -> Consume the context
 
