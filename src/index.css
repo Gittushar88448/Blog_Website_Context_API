@@ -18,4 +18,17 @@
     }
   }
   
+body {
+  font-family: 'Inter', sans-serif;
+}
   
+.dark-mode{
+    background-color: rgb(34, 33, 33);
+    color: white;
+    border-color: rgb(34, 33, 33);
+}
+
+.light-mode{
+    background-color: white;
+    color: black;
+}
