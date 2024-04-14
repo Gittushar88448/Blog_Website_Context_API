@@ -9,7 +9,7 @@ import  { AppContext }  from './context/AppContext';
 
 function App() {
 
-  const {fetchingPageData } = useContext(AppContext);
+  const {fetchingPageData ,isDarkMode} = useContext(AppContext);
 
 
   useEffect(() => {
@@ -17,12 +17,13 @@ function App() {
   },[]);
 
   
-  return (
-    <div className="App">
+  return (<div className={`${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+    <div className="App h-screen w-screen overflow-x-hidden ">
 
       <Header/>
       <MainPages/>
       <Bottom/>
+    </div>
     </div>
   );
 }
