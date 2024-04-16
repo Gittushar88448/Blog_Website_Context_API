@@ -1,6 +1,6 @@
 # Blog Website
 
-This project is a simple blog website built using React, Tailwind CSS, and Context API. It allows users to read, create, update, and delete blog posts.
+This is a React-based blog website that utilizes the Context API for state management, along with various React hooks such as useLocation, useSearchParams, and useState. The website consists of multiple pages including categories, tags, and blogs, each with full functionality for browsing and interacting with content.
 
 ## Table of Contents
 
@@ -13,9 +13,20 @@ This project is a simple blog website built using React, Tailwind CSS, and Conte
 
 ## Features
 
-- View a list of blog posts
-- Read individual blog posts
-- post comming through api call
+1. Context API: 
+Utilized for state management, ensuring efficient data flow throughout the application.- Read individual blog posts
+
+2. React Hooks:
+Various hooks such as useLocation, useSearchParams, and useState are employed for managing state and handling routing.
+
+3. Pages:
+- Home: The landing page of the blog website, displaying featured blogs or latest posts.
+- Categories: A page displaying different categories of blogs, allowing users to filter content based on categories.
+- Tags: A page showcasing tags associated with blogs, enabling users to explore content based on tags.
+- Blog Detail: Individual pages for each blog post, providing detailed information and allowing users to interact with comments, likes, and shares.
+
+4. Darkmode and Lightmode:
+User can switch to lightmode as well as darkmode
 
 ## Technologies Used
 
