@@ -1,8 +1,10 @@
 
 import './index.css';
-import Header from './components/Header';
-import Bottom from './components/Bottom';
-import MainPages from './components/MainPages';
+import { Route, Routes } from 'react-router-dom';
+import Home from "./components/Pages/Home";
+import Blogs from "./components/Pages/Blogs";
+import Category from "./components/Pages/Category";
+import Tags from "./components/Pages/Tags";
 import { useContext, useEffect } from 'react';
 import  { AppContext }  from './context/AppContext';
 
@@ -19,10 +21,12 @@ function App() {
   
   return (<div className={`${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
     <div className="App h-screen w-screen overflow-x-hidden ">
-
-      <Header/>
-      <MainPages/>
-      <Bottom/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Blogs/:blogId" element={<Blogs/>}/>
+        <Route path="/categories/:category" element={<Category/>}/>
+        <Route path="/Tags/:tags" element={<Tags/>}/>
+      </Routes>
     </div>
     </div>
   );
