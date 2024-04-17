@@ -15,10 +15,17 @@ export default function AppContextProvider({ children }) {
     const [isDarkMode, setDarkMode] = useState(false);
 
 
-    async function fetchingPageData(page = 1){
+    async function fetchingPageData(page = 1 ,tag = null , category){
         setLoading(true)
+        let url = `${baseUrl}?page=${page}`;
+        if(tag){
+            url += `&tag=${tag}`;
+        }
+        if(category){
+            url += `&category=${category}`;
+        }
         try{
-            const data = await fetch(`${baseUrl}?page=${page}`);
+            const data = await fetch(url);
             const response = await data.json();
             setPage(response.page);
             setPosts(response.posts);
