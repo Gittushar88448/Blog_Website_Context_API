@@ -13,16 +13,18 @@ const Category = () => {
     return (
         <div>
             <Header />
-            <div>
+            <div className='mt-[75px] w-11/12 max-w-[670px] items-center mx-auto flex gap-x-3 '>
                 <button onClick={() => {
                     navigate(-1);
-                }}>
+                }}
+                className='border font-bold px-4 py-2 bg-blue-500 rounded-md text-white'
+                >
                     Back
                 </button>
 
 
                 <h2>
-                    <span>Blogs on {category} </span>
+                    <span className='font-bold '>Blogs on {category} </span>
                 </h2>
             </div>
             <MainPages />
