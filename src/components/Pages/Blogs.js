@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import Header from '../Header';
-import Bottom from '../Bottom';
 import BlogDetails from '../BlogDetails';
+import Spinner from '../Spinner';
 
 const Blogs = () => {
     const [blog, setBlog] = useState(null);
@@ -35,12 +35,14 @@ const Blogs = () => {
     }, [location.pathname]);
 
     return (
-        <div>
+        <div >
             <Header />
-            <div>
+            <div className='mt-[75px] w-11/12 max-w-[670px] items-start mx-auto'>
                 <button onClick={() => {
                     navigate(-1);
-                }}>
+                }}
+                className='border font-bold px-4 py-2 bg-blue-500 rounded-md text-white'
+                >
                     Back
                 </button>
             </div>
@@ -48,20 +50,20 @@ const Blogs = () => {
             {
                 loading ?
                     (
-                        <div>
-                            <p>Loading...</p>
+                        <div className='w-screen flex justify-center items-center '>
+                            <Spinner/>
                         </div>
                     ) :
 
                     blog ?
                         (
-                            <div>
+                            <div className='w-11/12 max-w-[670px] py-7 flex flex-col gap-y-7 mt-[20px]  mx-auto '>
 
                                 <div>
                                     <BlogDetails post={blog} />
                                 </div>
 
-                                <h2>Related Blogs</h2>
+                                <h2 className='font-semibold text-3xl underline items-start'>Related Blogs</h2>
 
                                 {
                                     relatedBlogs.map((post) => (
@@ -76,7 +78,7 @@ const Blogs = () => {
                         ) :
 
                         (
-                            <div>
+                            <div className='h-screen w-screen flex justify-center items-center font-semibold text-2xl overflow-y-hidden'>
                                 <p> No Data Found </p>
                             </div>
 
